@@ -16,11 +16,12 @@ const openai = new OpenAIApi(configuration);
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-const port = 3080;
+const port = process.env.PORT || 3080;
 
 // app.get("/", (req, res) => {
 //     console.log()
 // });
+
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
